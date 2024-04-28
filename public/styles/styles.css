@@ -20,9 +20,12 @@ body {
    justify-content: center;
    align-items: center;
    background: #222;
+   perspective: 200vh;
+   overflow: hidden;
 }
 
 .grid {
+   transform: rotateX(45deg) rotateZ(45deg) scale(.5);
    display: inline-grid;
 }
 
@@ -51,5 +54,27 @@ body {
    position: fixed;
    background: #9b9b9b;
    opacity: .2;
+   /* transform: rotateZ(45deg); */
 }
 
+
+
+.grid-controls {
+   background: #bbb;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   margin: 5px;
+   padding: 6px 4px;
+   border-radius: 10px;
+}
+
+.grid-controls button {
+   margin: 0 2px;
+   height: 40px;
+   width: 40px;
+   padding: 5px 10px;
+   border-radius: 5px;
+   background: #ddd;
+   border: none;
+}

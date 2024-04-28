@@ -15,9 +15,14 @@
          <input type="range" id="widthSlider" min="0" max="10" value="5">
       </div>
       <button class="toggle-clear-blocks" onclick="toggleClearBlocks()">Start clearing blocks</button>
+      <button onclick="randomizeCellStates()">Randomize cell states</button>
    </div>
    <div class="grid-parent">
       <div class="grid"></div>
+      <div class="grid-controls">
+         <button onclick="zoomIn()">+</button>
+         <button onclick="zoomOut()">-</button>
+      </div>
    </div>
 </body>
 <span class="cursor-preview"></span>

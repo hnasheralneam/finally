@@ -27,18 +27,27 @@ function generateGrid() {
         grid[i] = [];
         domGrid[i] = [];
         for (let j = 0; j < COLS; j++) {
-            grid[i][j] = Math.floor(Math.random() * 2);
             let cell = document.createElement("div");
             cell.classList.add("box");
-            if (grid[i][j] == 1)
-                cell.classList.add("full");
             addTracking(cell, i, j);
             domGrid[i][j] = cell;
             gridEl === null || gridEl === void 0 ? void 0 : gridEl.appendChild(cell);
         }
     }
+    randomizeCellStates();
     let breakEl = document.createElement("br");
     gridEl === null || gridEl === void 0 ? void 0 : gridEl.appendChild(breakEl);
+}
+function randomizeCellStates() {
+    for (let i = 0; i < ROWS; i++) {
+        for (let j = 0; j < COLS; j++) {
+            grid[i][j] = Math.floor(Math.random() * 2);
+            if (grid[i][j] == 1)
+                domGrid[i][j].classList.add("full");
+            else
+                domGrid[i][j].classList.remove("full");
+        }
+    }
 }
 generateGrid();
 let mouseOffX = 0;
@@ -193,4 +202,19 @@ function toggleClearBlocks() {
     clearEnabled = !clearEnabled;
     if (clearBlock)
         clearBlock.textContent = clearEnabled ? "Stop clearing blocks" : "Start clearing blocks";
+}
+let gridRotation = "rotateX(45deg) rotateZ(45deg)";
+let gridScale = .5;
+function zoomIn() {
+    gridScale += .1;
+    renderGrid();
+}
+function zoomOut() {
+    if (gridScale > .2)
+        gridScale -= .1;
+    renderGrid();
+}
+function renderGrid() {
+    if (gridEl)
+        gridEl.style.transform = `scale(${gridScale}) ${gridRotation}`;
 }
