@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Finally!</title>
+   <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+   <div class="buildings">
+      <div>
+         <p>height</p>
+         <input type="range" id="heightSlider" min="0" max="10" value="5">
+         <p>width</p>
+         <input type="range" id="widthSlider" min="0" max="10" value="5">
+      </div>
+      <button class="toggle-clear-blocks" onclick="toggleClearBlocks()">Start clearing blocks</button>
+   </div>
+   <div class="grid-parent">
+      <div class="grid"></div>
+   </div>
+</body>
+<span class="cursor-preview"></span>
+<script src="scripts/main.js"></script>
+</html>

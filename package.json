@@ -1,0 +1,14 @@
+{
+   "name": "finally",
+   "version": "0.1.0",
+   "description": "finally!",
+   "main": "index.js",
+   "scripts": {
+      "compile": "npx tsc -w"
+   },
+   "author": "",
+   "license": "GPL-3.0-or-later",
+   "devDependencies": {
+      "typescript": "^5.4.5"
+   }
+}
